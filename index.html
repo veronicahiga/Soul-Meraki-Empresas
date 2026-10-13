@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Soul Meraki · Empresas</title>
+  <link rel="stylesheet" href="_ds/soul-meraki-design-system-7dffe249-7f21-4540-82af-87386c11b050/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/soul-meraki-design-system-7dffe249-7f21-4540-82af-87386c11b050/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/soul-meraki-design-system-7dffe249-7f21-4540-82af-87386c11b050/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/soul-meraki-design-system-7dffe249-7f21-4540-82af-87386c11b050/tokens/layout.css">
+  <link rel="stylesheet" href="_ds/soul-meraki-design-system-7dffe249-7f21-4540-82af-87386c11b050/tokens/base.css">
+  <link rel="stylesheet" href="_ds/soul-meraki-design-system-7dffe249-7f21-4540-82af-87386c11b050/styles.css">
+  <script src="_ds/soul-meraki-design-system-7dffe249-7f21-4540-82af-87386c11b050/_ds_bundle.js"></script>
+  <style>body{margin:0}a{color:var(--sm-ink)}a:hover{color:var(--accent)}</style>
+</helmet>
+<div data-sentiment="{{ sentiment }}" style="background:var(--surface-page);color:var(--text-body);font-family:var(--font-serif)">
+
+  <section data-screen-label="01 Hero" style="position:relative;height:100svh;min-height:640px;background:#3a332f;overflow:hidden">
+    <video ref="{{ setHeroVideo }}" src="assets/video-hero-empresas.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
+    <div aria-hidden="true" style="position: absolute; inset: 0; background-color: #1C1D1D44"></div>
+    <header style="position:absolute;top:0;left:0;right:0;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:16px;padding:32px clamp(24px,3vw,56px) 0">
+      <button type="button" onClick="{{ openMenu }}" aria-label="Abrir menú" style="justify-self:start;display:flex;align-items:center;gap:12px;min-height:44px;padding:0;background:none;border:0;cursor:pointer;color:var(--sm-white);font-family:var(--font-sans);font-weight:500;font-size:13px;letter-spacing:0.15em;text-transform:uppercase">
+        <span style="display:flex;flex-direction:column;gap:6px;width:24px"><span style="display:block;height:1px;background:currentColor"></span><span style="display:block;height:1px;background:currentColor"></span></span>
+        <span>Menú</span>
+      </button>
+      <img src="assets/logo-soulmeraki-blanc.svg" alt="Soul Meraki" style="display: block; height: 83px; width: 63px">
+      <div style="justify-self:end;display:flex">
+        <x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.Button" variant="inverse" size="sm" dc-props="{{ headerCta }}" onClick="{{ goContacto }}" hint-size="auto,44px">Solicita tu propuesta</x-import>
+      </div>
+    </header>
+    <div style="position:absolute;left:0;right:0;bottom:clamp(40px,5vw,64px);display:flex;justify-content:flex-start;padding:0 clamp(24px,3vw,56px);pointer-events:none">
+      <h1 style="margin:0;font-family:var(--font-serif);font-weight:300;font-style:italic;font-size:clamp(26px,2.3vw,32px);line-height:1.25;color:var(--sm-white);text-align:left">Sentir y hacer sentir</h1>
+    </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <nav aria-label="Secciones" style="position:fixed;inset:0;z-index:50;background:var(--sm-ink);color:var(--sm-white);display:flex;flex-direction:column;padding:32px clamp(24px,3vw,56px) 48px;overflow:auto">
+        <div style="display:flex;justify-content:flex-start">
+          <button type="button" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:44px;padding:0;background:none;border:0;cursor:pointer;color:var(--sm-white);font-family:var(--font-sans);font-weight:500;font-size:13px;letter-spacing:0.15em;text-transform:uppercase">Cerrar</button>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(12px,2vh,24px);padding:48px 0">
+          <sc-for list="{{ menuItems }}" as="item" hint-placeholder-count="7">
+            <a href="#{{ item.id }}" onClick="{{ item.go }}" style="display:flex;align-items:baseline;gap:16px;color:var(--sm-white);text-decoration:none;font-family:var(--font-serif);font-weight:300;font-size:clamp(28px,3.4vw,44px);line-height:1.2;transition:opacity 400ms ease" style-hover="opacity:0.7">
+              <span style="font-family:var(--font-sans);font-size:13px;letter-spacing:0.15em">{{ item.num }}</span>
+              <span>{{ item.label }}</span>
+            </a>
+          </sc-for>
+        </div>
+      </nav>
+    </sc-if>
+  </section>
+
+  <section id="propuesta" data-screen-label="02 Propuesta de valor" style="position:relative;min-height:100svh;background:var(--sm-marro-2);color:var(--sm-white);overflow:hidden">
+    <x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.Photo" shot="Imagen – fondo propuesta de valor · 16:9 · pantalla completa" tone="dark" dc-props="{{ fillProp }}" style="position:absolute;inset:0" hint-size="100%,100%"></x-import>
+    <div style="position:relative;min-height:100svh;display:flex;flex-direction:column;padding:clamp(64px,7vw,96px) clamp(24px,3vw,56px) clamp(64px,7vw,96px)">
+      <div style="max-width:600px;display:flex;flex-direction:column;gap:24px">
+        <h2 style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(28px,2.6vw,36px);line-height:1.2;letter-spacing:-0.01em;text-wrap:balance">Gestos y detalles con alma.</h2>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; text-wrap: pretty">Un regalo corporativo puede ser un simple detalle… o convertirse en la forma más sincera de consolidar una relación.</p>
+      </div>
+      <div style="flex:1;display:flex;align-items:flex-end;justify-content:flex-end;padding:clamp(160px,32vw,480px) 0 clamp(64px,8vw,128px)">
+        <p style="margin: 0; max-width: 460px; font-size: 16px; line-height: 1.6; text-wrap: pretty">En Soul Meraki creemos que cada gesto es una oportunidad para cuidar aquello que no figura en un balance, pero sostiene a cualquier compañía: su capital relacional. Las relaciones sólidas se construyen con confianza, se fortalecen con experiencias y perduran cuando logramos hacer sentir.</p>
+      </div>
+      <div style="height:1px;background:var(--sm-marro-tint-25)"></div>
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:48px;padding-top:clamp(64px,7vw,96px)">
+        <p style="margin:0;display:flex;flex-direction:column;gap:4px;font-family:var(--font-serif);font-weight:300;font-style:italic;font-size:clamp(22px,2.2vw,30px);line-height:1.35;text-wrap:balance"><span style="font-size: clamp(22px,5.6vw,27px)">Creamos experiencias concebidas para personas, momentos y vínculos concretos.</span> <span style="font-size: clamp(22px,5.6vw,27px)">Porque cuando un regalo tiene alma, adquiere un valor incalculable.</span></p>
+        <x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.Button" variant="inverse" size="lg" dc-props="{{ ctaFit }}" onClick="{{ goDiferencial }}" hint-size="auto,60px">Descubre Soul Meraki</x-import>
+      </div>
+    </div>
+  </section>
+
+  <section id="diferencial" ref="{{ difRef }}" data-screen-label="03 Diferencial" style="background:var(--sm-white)">
+    <div style="position:relative;height:100svh;min-height:640px;overflow:hidden;color:var(--sm-white)">
+      <x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.Photo" shot="Video – diferencial · 16:9" tone="dark" dc-props="{{ fillIntro }}" style="position:absolute;inset:0" hint-size="100%,100%"></x-import>
+      <div style="position:absolute;inset:0;padding:clamp(32px,4vw,56px)">
+        <div style="max-width:520px;display:flex;flex-direction:column;align-items:flex-start;gap:20px">
+          
+          <h2 style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(26px,2.4vw,34px);line-height:1.2;letter-spacing:-0.01em;text-wrap:balance">¿Qué hace diferente a Soul Meraki?</h2>
+          <p style="margin:0;font-size:16px;line-height:1.6;text-wrap:pretty">No diseñamos objetos. Creamos experiencias que se sienten, se degustan, se huelen y se escuchan. En nuestros envíos, cada elemento responde a un propósito:</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column">
+      <div style="position:relative;height:100svh;min-height:640px;overflow:hidden;color:var(--sm-white)">
+        <x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.Photo" shot="Video – vino y aceite · 16:9" tone="dark" dc-props="{{ fillVid1 }}" style="position:absolute;inset:0" hint-size="100%,100%"></x-import>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:clamp(32px,4vw,56px)">
+          <h3 style="margin:0;max-width:360px">
+            <span style="display:block;font-family:var(--font-serif);font-weight:300;font-style:italic;font-size:20px;line-height:1.3">El vino y el aceite:</span>
+            <span style="display:block;margin-top:6px;font-family:var(--font-serif);font-weight:300;font-size:clamp(24px,2.2vw,30px);line-height:1.2;letter-spacing:-0.01em;text-wrap:balance">La mesa como punto de encuentro.</span>
+          </h3>
+          <p style="margin:0;align-self:flex-end;max-width:420px;font-size:16px;line-height:1.6;text-wrap:pretty">No son solo productos selectos; son la excusa perfecta para reunirse. Alrededor de una mesa se abren conversaciones y los instantes sencillos se transforman en recuerdos compartidos. Con nombre y origen de autor: vino de Josep Grau Viticultor y aceite virgen extra de Mas l'Arboçar de Torrelavit.</p>
+        </div>
+      </div>
+      <div style="position:relative;height:100svh;min-height:640px;overflow:hidden;color:var(--sm-white)">
+        <x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.Photo" shot="Video – vela · 16:9" tone="dark" dc-props="{{ fillVid2 }}" style="position:absolute;inset:0" hint-size="100%,100%"></x-import>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:clamp(32px,4vw,56px)">
+          <h3 style="margin:0;max-width:360px">
+            <span style="display:block;font-family:var(--font-serif);font-weight:300;font-style:italic;font-size:20px;line-height:1.3">La vela:</span>
+            <span style="display:block;margin-top:6px;font-family:var(--font-serif);font-weight:300;font-size:clamp(24px,2.2vw,30px);line-height:1.2;letter-spacing:-0.01em;text-wrap:balance">Un aroma que envuelve el ambiente.</span>
+          </h3>
+          <p style="margin:0;align-self:flex-end;max-width:420px;font-size:16px;line-height:1.6;text-wrap:pretty">Una vela aromática revestida en piel cuyo perfume transmite la esencia de las flores, lo que las palabras no siempre alcanzan a expresar: cercanía, gratitud y celebración.</p>
+        </div>
+      </div>
+      <div style="position:relative;height:100svh;min-height:640px;overflow:hidden;color:var(--sm-white)">
+        <x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.Photo" shot="Video – música · 16:9" tone="dark" dc-props="{{ fillVid3 }}" style="position:absolute;inset:0" hint-size="100%,100%"></x-import>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:clamp(32px,4vw,56px)">
+          <h3 style="margin:0;max-width:360px">
+            <span style="display:block;font-family:var(--font-serif);font-weight:300;font-style:italic;font-size:20px;line-height:1.3">La música:</span>
+            <span style="display:block;margin-top:6px;font-family:var(--font-serif);font-weight:300;font-size:clamp(24px,2.2vw,30px);line-height:1.2;letter-spacing:-0.01em;text-wrap:balance">El ancla de la memoria.</span>
+          </h3>
+          <p style="margin:0;align-self:flex-end;max-width:420px;font-size:16px;line-height:1.6;text-wrap:pretty">Una atmósfera sonora exclusiva para cada experiencia, accesible a través de su propia landing personalizada. Una canción tiene el poder de fijar a una persona y un instante en la memoria de forma imborrable.</p>
+        </div>
+      </div>
+      <div style="position:relative;height:100svh;min-height:640px;overflow:hidden;color:var(--sm-white)">
+        <x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.Photo" shot="Video – dedicatoria · 16:9" tone="dark" dc-props="{{ fillVid4 }}" style="position:absolute;inset:0" hint-size="100%,100%"></x-import>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:clamp(32px,4vw,56px)">
+          <h3 style="margin:0;max-width:360px">
+            <span style="display:block;font-family:var(--font-serif);font-weight:300;font-style:italic;font-size:20px;line-height:1.3">La dedicatoria:</span>
+            <span style="display:block;margin-top:6px;font-family:var(--font-serif);font-weight:300;font-size:clamp(24px,2.2vw,30px);line-height:1.2;letter-spacing:-0.01em;text-wrap:balance">El matiz que lo hace irrepetible.</span>
+          </h3>
+          <p style="margin:0;align-self:flex-end;max-width:420px;font-size:16px;line-height:1.6;text-wrap:pretty">Tus palabras, articuladas por nosotros en una dedicatoria única. Para esos momentos en los que el sentimiento es profundo pero cuesta dar con el mensaje preciso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="impacto" data-screen-label="03b Impacto" data-sentiment="{{ impactSentiment }}" style="position:relative;height:100svh;min-height:640px;background:var(--sentiment-1);color:var(--sm-white)">
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;gap:64px;padding:clamp(32px,4vw,56px)">
+      <div style="max-width:760px;display:flex;flex-direction:column;align-items:flex-start;gap:24px">
+        <span style="font-family:var(--font-serif);font-weight:300;font-style:italic;font-size:20px;line-height:1.2">El impacto</span>
+        <p style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(24px,2.2vw,30px);line-height:1.3;letter-spacing:-0.01em;text-wrap:balance">Una experiencia sensorial que conecta con las personas y consolida el recuerdo de tu marca.</p>
+      </div>
+      <p style="margin:0;align-self:flex-end;max-width:460px;display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:8px;font-family:var(--font-serif);font-weight:300">
+        <span style="font-style:italic;font-size:24px;line-height:1.2">Un</span> <span style="font-size:clamp(72px,8vw,112px);line-height:1;letter-spacing:-0.02em">85%</span> <span style="font-style:italic;font-size:clamp(20px,1.8vw,24px);line-height:1.4;text-wrap:balance">más de recuerdo de marca que el regalo corporativo convencional.</span>
+      </p>
+    </div>
+  </section>
+
+  <section id="casos" data-screen-label="04 Casos de uso" style="background:var(--sm-white);color:var(--text-body);padding:clamp(64px,7vw,96px) clamp(24px,3vw,56px) clamp(96px,10vw,128px)">
+    <h2 style="margin:0 0 clamp(48px,5vw,72px);text-align:center;text-wrap:balance;font-family:var(--font-serif);font-weight:300;font-size:clamp(28px,2.6vw,36px);line-height:1.2;letter-spacing:-0.01em">¿En qué podemos acompañarte?</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:24px;align-items:start">
+      <article style="display:flex;flex-direction:column;gap:20px">
+        <x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.Photo" shot="Imagen – clientes estratégicos · 2:3" tone="light" ratio="2 / 3" hint-size="100%,420px"></x-import>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <h3 style="margin:0;font-family:var(--font-serif);font-weight:300;font-style:italic;font-size:22px;line-height:1.3;letter-spacing:-0.01em;text-wrap:balance">Clientes estratégicos</h3>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:var(--text-secondary);text-wrap:pretty">Ofrece una experiencia de bienvenida o fidelización que los haga sentirse genuinamente valorados.</p>
+        </div>
+      </article>
+      <article style="display:flex;flex-direction:column;gap:20px">
+        <x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.Photo" shot="Imagen – accionistas y consejo · 6:7" tone="light" ratio="6 / 7" hint-size="100%,420px"></x-import>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <h3 style="margin:0;font-family:var(--font-serif);font-weight:300;font-style:italic;font-size:22px;line-height:1.3;letter-spacing:-0.01em;text-wrap:balance">Accionistas y Consejo de Administración</h3>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:var(--text-secondary);text-wrap:pretty">Celebra los hitos de la organización con un gesto a la altura de la exigencia y del vínculo institucional.</p>
+        </div>
+      </article>
+      <article style="display:flex;flex-direction:column;gap:20px">
+        <x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.Photo" shot="Imagen – equipo interno · 2:3" tone="light" ratio="2 / 3" hint-size="100%,420px"></x-import>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <h3 style="margin:0;font-family:var(--font-serif);font-weight:300;font-style:italic;font-size:22px;line-height:1.3;letter-spacing:-0.01em;text-wrap:balance">Equipo interno</h3>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:var(--text-secondary);text-wrap:pretty">Reconoce el talento y el compromiso de tus colaboradores haciéndoles saber que son parte fundamental del proyecto.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="proceso" data-screen-label="06 Proceso" style="background:var(--sm-white)">
+    <div style="padding:clamp(96px,10vw,128px) clamp(24px,4vw,32px) clamp(96px,10vw,144px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:32px">
+      <x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.Ornament" mark="petal" size="{{ 24 }}" color="var(--accent)" hint-size="100%,24px"></x-import>
+      <h2 style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(28px,3vw,40px);line-height:1.2;letter-spacing:-0.01em;text-wrap:balance">No habrá nunca una propuesta como la tuya.</h2>
+      <p style="margin:0;display:flex;flex-direction:column;gap:4px;font-size:16px;line-height:1.7;text-wrap:balance"><span>Cada entrega se conceptualiza de forma individual según la ocasión y el objetivo.</span> <span>Cuéntanos qué deseas transmitir y a quién.</span></p>
+    </div>
+    <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
+      <li style="display:flex;flex-wrap:wrap;flex-direction:row">
+        <div style="flex:1 1 420px;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(32px,6vw,64px);padding:clamp(32px,4vw,56px) clamp(24px,4vw,56px);text-align:left">
+          <h3 style="margin:0;max-width:440px;font-family:var(--font-serif);font-weight:300">
+            <span style="display:block;font-style:italic;font-size:20px;line-height:1.3;color:var(--accent)">01</span>
+            <span style="display:block;margin-top:8px;font-size:clamp(26px,2.4vw,34px);line-height:1.2;letter-spacing:-0.01em;text-wrap:balance">Elección de formato</span>
+          </h3>
+          <p style="margin:0;max-width:440px;align-self:flex-end;text-align:right;font-size:16px;line-height:1.6;color:var(--text-secondary);text-wrap:pretty">Selección de vino o aceite de autor de alta gama combinada con una vela aromática premium.</p>
+        </div>
+        <div style="flex:1 1 420px;position:relative;aspect-ratio:3 / 2">
+          <x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.Photo" shot="Imagen – elección de formato · 3:2" tone="light" dc-props="{{ fill }}" style="position:absolute;inset:0" hint-size="100%,100%"></x-import>
+        </div>
+      </li>
+      <li style="display:flex;flex-wrap:wrap;flex-direction:row-reverse">
+        <div style="flex:1 1 420px;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(32px,6vw,64px);padding:clamp(32px,4vw,56px) clamp(24px,4vw,56px);text-align:right">
+          <h3 style="margin:0;max-width:440px;align-self:flex-end;font-family:var(--font-serif);font-weight:300">
+            <span style="display:block;font-style:italic;font-size:20px;line-height:1.3;color:var(--accent)">02</span>
+            <span style="display:block;margin-top:8px;font-size:clamp(26px,2.4vw,34px);line-height:1.2;letter-spacing:-0.01em;text-wrap:balance">Personalización integral</span>
+          </h3>
+          <p style="margin:0;max-width:440px;align-self:flex-start;text-align:left;font-size:16px;line-height:1.6;color:var(--text-secondary);text-wrap:pretty">Diseño de carpeta corporativa, dedicatoria a medida y landing digital exclusiva para la persona u ocasión.</p>
+        </div>
+        <div style="flex:1 1 420px;position:relative;aspect-ratio:3 / 2">
+          <x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.Photo" shot="Imagen – personalización integral · 3:2" tone="light" dc-props="{{ fill }}" style="position:absolute;inset:0" hint-size="100%,100%"></x-import>
+        </div>
+      </li>
+      <li style="display:flex;flex-wrap:wrap;flex-direction:row">
+        <div style="flex:1 1 420px;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(32px,6vw,64px);padding:clamp(32px,4vw,56px) clamp(24px,4vw,56px);text-align:left">
+          <h3 style="margin:0;max-width:440px;font-family:var(--font-serif);font-weight:300">
+            <span style="display:block;font-style:italic;font-size:20px;line-height:1.3;color:var(--accent)">03</span>
+            <span style="display:block;margin-top:8px;font-size:clamp(26px,2.4vw,34px);line-height:1.2;letter-spacing:-0.01em;text-wrap:balance">Logística y entrega</span>
+          </h3>
+          <p style="margin:0;max-width:440px;align-self:flex-end;text-align:right;font-size:16px;line-height:1.6;color:var(--text-secondary);text-wrap:pretty">Nos ocupamos de que cada detalle esté listo y llegue en el instante exacto.</p>
+        </div>
+        <div style="flex:1 1 420px;position:relative;aspect-ratio:3 / 2">
+          <x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.Photo" shot="Imagen – logística y entrega · 3:2" tone="light" dc-props="{{ fill }}" style="position:absolute;inset:0" hint-size="100%,100%"></x-import>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="clientes" data-screen-label="05 Clientes" style="padding: clamp(96px,10vw,128px) clamp(24px,4vw,32px); background-color: #FFFFFF">
+    <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(56px,6vw,80px)">
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px">
+        <h2 style="margin: 0; font-family: var(--font-serif); font-weight: 300; font-size: clamp(28px,3vw,40px); line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance">Experiencias que perduran</h2>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; text-wrap: balance">Marcas que han elegido transformar sus compromisos en experiencias memorables:</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:24px">
+        <div role="img" aria-label="Logo – ALKIMIA CAPITAL" style="aspect-ratio:5 / 2;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--sm-white);border:1px solid var(--border-hairline);text-align:center;font-family:var(--font-sans);font-weight:500;font-size:14px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-secondary)">ALKIMIA CAPITAL</div>
+        <div role="img" aria-label="Logo – EXECUTIVE ALTITUDE LEADERSHIP" style="aspect-ratio:5 / 2;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--sm-white);border:1px solid var(--border-hairline);text-align:center;font-family:var(--font-sans);font-weight:500;font-size:14px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-secondary)">EXECUTIVE ALTITUDE LEADERSHIP</div>
+        <div role="img" aria-label="Logo – OPCIÓ RECURSOS HUMANS" style="aspect-ratio:5 / 2;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--sm-white);border:1px solid var(--border-hairline);text-align:center;font-family:var(--font-sans);font-weight:500;font-size:14px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-secondary)">OPCIÓ RECURSOS HUMANS</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" data-screen-label="07 Contacto" style="padding: clamp(96px,10vw,128px) clamp(24px,4vw,32px); background-color: var(--sm-white)">
+    <div style="max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:64px">
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px">
+        <h2 style="margin: 0; font-family: var(--font-serif); font-weight: 300; font-size: clamp(28px,3vw,40px); line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance">¿Por dónde empezamos?</h2>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; text-wrap: balance">Cuéntanos a quién quieres sorprender y por qué este momento es relevante.</p>
+      </div>
+      <form onSubmit="{{ onSubmit }}" style="display:flex;flex-wrap:wrap;gap:24px">
+        <div style="flex:1 1 240px"><x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.TextField" label="Empresa" name="empresa" hint-size="100%,82px"></x-import></div>
+        <div style="flex:1 1 240px"><x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.TextField" label="Cargo" name="cargo" hint-size="100%,82px"></x-import></div>
+        <div style="flex:1 1 100%"><x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.TextField" label="Volumen aprox." name="volumen" hint-size="100%,82px"></x-import></div>
+        <div style="flex:1 1 240px"><x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.TextField" label="Email" name="email" type="email" hint-size="100%,82px"></x-import></div>
+        <div style="flex:1 1 240px"><x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.TextField" label="Teléfono" name="telefono" type="tel" hint-size="100%,82px"></x-import></div>
+        <div style="flex:1 1 100%;display:flex;justify-content:center;margin-top:24px">
+          <x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.Button" type="submit" size="lg" dc-props="{{ ctaFit }}" hint-size="auto,60px">Solicita tu propuesta personalizada</x-import>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer data-screen-label="Pie" style="background:var(--sm-white);padding:96px 32px 48px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:32px">
+    <img src="assets/logo-soulmeraki-tinta.svg" alt="Soul Meraki" style="display:block;height:96px;width:auto">
+    <p style="margin:0;font-family:var(--font-serif);font-weight:300;font-style:italic;font-size:20px;line-height:1.4">Sentimientos encajados en la exclusividad de un instante.</p>
+    <p style="margin:0;font-family:var(--font-sans);font-weight:300;font-size:13px;color:var(--text-secondary)">© Soul Meraki 2026</p>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;sentiment&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;verd&quot;,&quot;marro&quot;,&quot;burdeus&quot;],&quot;default&quot;:&quot;verd&quot;,&quot;tsType&quot;:&quot;'verd'|'marro'|'burdeus'&quot;,&quot;section&quot;:&quot;Marca&quot;},&quot;impactTone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;sentimiento&quot;,&quot;tinta&quot;],&quot;default&quot;:&quot;sentimiento&quot;,&quot;tsType&quot;:&quot;'sentimiento'|'tinta'&quot;,&quot;section&quot;:&quot;Marca&quot;}}">
+class Component extends DCLogic {
+  difRef = React.createRef();
+  heroVideo = null;
+  setHeroVideo = (v) => {
+    if (!v || v === this.heroVideo) return;
+    this.heroVideo = v;
+    v.muted = true; v.defaultMuted = true; v.loop = true; v.playsInline = true;
+    v.setAttribute('muted', ''); v.setAttribute('playsinline', '');
+    const tryPlay = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+    tryPlay();
+    v.addEventListener('canplay', tryPlay, { once: true });
+    const onInteract = () => { tryPlay(); window.removeEventListener('pointerdown', onInteract); };
+    window.addEventListener('pointerdown', onInteract);
+  };
+  goTo(id) {
+    const el = document.getElementById(id);
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' });
+  }
+  renderVals() {
+    const s = this.props.sentiment ?? 'verd';
+    return {
+      setHeroVideo: this.setHeroVideo,
+      sentiment: s,
+      impactSentiment: (this.props.impactTone ?? 'sentimiento') === 'tinta' ? 'condol' : s,
+      fill: { ratio: 'auto', style: { position: 'absolute', inset: 0, height: '100%' } },
+      fillProp: { ratio: 'auto', style: { position: 'absolute', inset: 0, height: '100%', background: 'var(--sm-marro-2)' } },
+      fillIntro: { ratio: 'auto', style: { position: 'absolute', inset: 0, height: '100%', background: 'var(--sm-verd-2)' } },
+      fillVid1: { ratio: 'auto', style: { position: 'absolute', inset: 0, height: '100%', background: 'var(--sm-verd-1)' } },
+      fillVid2: { ratio: 'auto', style: { position: 'absolute', inset: 0, height: '100%', background: 'var(--sm-marro-1)' } },
+      fillVid3: { ratio: 'auto', style: { position: 'absolute', inset: 0, height: '100%', background: 'var(--sm-burdeus-1)' } },
+      fillVid4: { ratio: 'auto', style: { position: 'absolute', inset: 0, height: '100%', background: '#3a332f' } },
+      cardFill: { style: { height: '100%' } },
+      ctaFit: { style: { whiteSpace: 'normal', textAlign: 'center', maxWidth: '100%', padding: '14px clamp(20px,6vw,40px)', lineHeight: 1.4 } },
+      difRef: this.difRef,
+      menuOpen: !!this.state?.menuOpen,
+      openMenu: () => this.setState({ menuOpen: true }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      headerCta: { style: { whiteSpace: 'normal', textAlign: 'center', lineHeight: 1.3 } },
+      goContacto: () => this.goTo('contacto'),
+      menuItems: [['propuesta','Propuesta de valor'],['diferencial','Diferencial'],['impacto','Impacto'],['casos','Casos de uso'],['proceso','Proceso'],['clientes','Clientes'],['contacto','Contacto']].map(([id,label],i) => ({ id, label, num: String(i+1).padStart(2,'0'), go: e => { e.preventDefault(); this.setState({ menuOpen: false }); this.goTo(id); } })),
+      goDiferencial: () => {
+        const el = this.difRef.current;
+        if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' });
+      },
+      onSubmit: e => e.preventDefault(),
+    };
+  }
+}
+</script>
+</body>
+</html>
