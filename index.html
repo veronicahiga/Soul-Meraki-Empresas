@@ -23,12 +23,12 @@
   <section data-screen-label="01 Hero" style="position:relative;height:100svh;min-height:640px;background:#3a332f;overflow:hidden">
     <video ref="{{ setHeroVideo }}" src="assets/video-hero-empresas-v2.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
     <div aria-hidden="true" style="position: absolute; inset: 0; background-color: #1C1D1D44"></div>
-    <header style="position:absolute;top:0;left:0;right:0;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:16px;padding:32px clamp(24px,3vw,56px) 0">
+    <header style="position:absolute;top:0;left:0;right:0;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:clamp(20px,4vw,16px);padding:clamp(24px,4vw,32px) clamp(20px,3vw,56px) 0">
       <button type="button" onClick="{{ openMenu }}" aria-label="Abrir menú" style="justify-self:start;display:flex;align-items:center;gap:12px;min-height:44px;padding:0;background:none;border:0;cursor:pointer;color:var(--sm-white);font-family:var(--font-sans);font-weight:500;font-size:13px;letter-spacing:0.15em;text-transform:uppercase">
         <span style="display:flex;flex-direction:column;gap:6px;width:24px"><span style="display:block;height:1px;background:currentColor"></span><span style="display:block;height:1px;background:currentColor"></span></span>
         <span>Menú</span>
       </button>
-      <img src="assets/logo-soulmeraki-blanc.svg" alt="Soul Meraki" style="display: block; height: 83px; width: 63px">
+      <img src="assets/logo-soulmeraki-blanc.svg" alt="Soul Meraki" style="display: block; height: clamp(52px,12vw,83px); width: auto">
       <div style="justify-self:end;display:flex">
         <x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.Button" variant="inverse" size="sm" dc-props="{{ headerCta }}" onClick="{{ goContacto }}" hint-size="auto,44px">Solicita tu propuesta</x-import>
       </div>
@@ -72,9 +72,23 @@
     </div>
   </section>
 
+  <section id="impacto" data-screen-label="03b Impacto" data-sentiment="{{ impactSentiment }}" style="position:relative;height:100svh;min-height:640px;background:var(--sentiment-1);color:var(--sm-white);overflow:hidden">
+    <video ref="{{ setBgVideo }}" src="assets/video-impacto.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
+    <div aria-hidden="true" style="position: absolute; inset: 0; background-color: #1C1D1D2C"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;gap:64px;padding:clamp(32px,4vw,56px)">
+      <div style="max-width:760px;display:flex;flex-direction:column;align-items:flex-start;gap:24px">
+        <span style="font-family:var(--font-serif);font-weight:300;font-style:italic;font-size:20px;line-height:1.2">El impacto</span>
+        <p style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(24px,2.2vw,30px);line-height:1.3;letter-spacing:-0.01em;text-wrap:balance">Una experiencia sensorial que <br>conecta con las personas y consolida <br>el recuerdo de tu marca.</p>
+      </div>
+      <p style="margin:0;align-self:flex-end;max-width:460px;display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:8px;font-family:var(--font-serif);font-weight:300">
+        <span style="font-style:italic;font-size:24px;line-height:1.2">Un</span> <span style="font-size:clamp(72px,8vw,112px);line-height:1;letter-spacing:-0.02em">85%</span> <span style="font-style:italic;font-size:clamp(20px,1.8vw,24px);line-height:1.4;text-wrap:balance">más de recuerdo de marca que el regalo corporativo convencional.</span>
+      </p>
+    </div>
+  </section>
+
   <section id="diferencial" ref="{{ difRef }}" data-screen-label="03 Diferencial" style="background:var(--sm-white)">
     <div style="position:relative;height:100svh;min-height:640px;overflow:hidden;color:var(--sm-white)">
-      <video src="assets/video-diferencial-v3.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
+      <video ref="{{ setBgVideo }}" src="assets/video-diferencial-v3.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
       <div aria-hidden="true" style="position: absolute; inset: 0; background-color: #1C1D1D15"></div>
       <div style="position:absolute;inset:0;padding:clamp(32px,4vw,56px);display:flex;flex-direction:column;justify-content:space-between;gap:48px">
         <h2 style="margin:0;align-self:flex-start;font-family:var(--font-serif);font-weight:300;font-size:clamp(26px,2.4vw,34px);line-height:1.2;letter-spacing:-0.01em">¿Qué hace diferente<br>a Soul Meraki?</h2>
@@ -113,11 +127,11 @@
             <span style="display:block;font-family:var(--font-serif);font-weight:300;font-style:italic;font-size:20px;line-height:1.3">La música:</span>
             <span style="display:block;margin-top:6px;font-family:var(--font-serif);font-weight:300;font-size:clamp(24px,2.2vw,30px);line-height:1.2;letter-spacing:-0.01em;text-wrap:balance">El ancla de la memoria.</span>
           </h3>
-          <p style="margin:0;align-self:flex-end;max-width:420px;font-size:16px;line-height:1.6;text-wrap:pretty">Una atmósfera sonora exclusiva para cada experiencia, accesible a través de su propia landing personalizada. Una canción tiene el poder de fijar a una persona y un instante en la memoria de forma imborrable.</p>
+          <p style="margin:0;align-self:flex-end;max-width:420px;font-size:16px;line-height:1.6;text-wrap:pretty">Una atmósfera sonora exclusiva para cada experiencia, accesible a través de su propio espacio digital personalizado. Una canción tiene el poder de fijar a una persona y un instante en la memoria de forma imborrable.</p>
         </div>
       </div>
       <div style="position:relative;height:100svh;min-height:640px;overflow:hidden;color:var(--sm-white)">
-        <img src="./dedicatoria-bg-mv8i7ldm-ozat.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+        <img src="./dedicatoria-hombre-bg-mv9ylpci-1uu7.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
         <div aria-hidden="true" style="position: absolute; inset: 0; background-color: #1C1D1D30"></div>
         <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:clamp(32px,4vw,56px)">
           <h3 style="margin:0;max-width:360px">
@@ -127,20 +141,6 @@
           <p style="margin:0;align-self:flex-end;max-width:420px;font-size:16px;line-height:1.6;text-wrap:pretty">Tus palabras, articuladas por nosotros en una dedicatoria única. Para esos momentos en los que el sentimiento es profundo pero cuesta dar con el mensaje preciso.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section id="impacto" data-screen-label="03b Impacto" data-sentiment="{{ impactSentiment }}" style="position:relative;height:100svh;min-height:640px;background:var(--sentiment-1);color:var(--sm-white);overflow:hidden">
-    <video src="assets/video-impacto.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
-    <div aria-hidden="true" style="position: absolute; inset: 0; background-color: #1C1D1D2C"></div>
-    <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;gap:64px;padding:clamp(32px,4vw,56px)">
-      <div style="max-width:760px;display:flex;flex-direction:column;align-items:flex-start;gap:24px">
-        <span style="font-family:var(--font-serif);font-weight:300;font-style:italic;font-size:20px;line-height:1.2">El impacto</span>
-        <p style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(24px,2.2vw,30px);line-height:1.3;letter-spacing:-0.01em;text-wrap:balance">Una experiencia sensorial que <br>conecta con las personas y consolida <br>el recuerdo de tu marca.</p>
-      </div>
-      <p style="margin:0;align-self:flex-end;max-width:460px;display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:8px;font-family:var(--font-serif);font-weight:300">
-        <span style="font-style:italic;font-size:24px;line-height:1.2">Un</span> <span style="font-size:clamp(72px,8vw,112px);line-height:1;letter-spacing:-0.02em">85%</span> <span style="font-style:italic;font-size:clamp(20px,1.8vw,24px);line-height:1.4;text-wrap:balance">más de recuerdo de marca que el regalo corporativo convencional.</span>
-      </p>
     </div>
   </section>
 
@@ -187,7 +187,7 @@
           <p style="margin:0;max-width:440px;align-self:flex-end;text-align:right;font-size:16px;line-height:1.6;color:var(--text-secondary);text-wrap:pretty">Selección de vino o aceite de autor de alta gama combinada con una vela aromática premium.</p>
         </div>
         <div style="flex:1 1 420px;position:relative;aspect-ratio:3 / 2">
-          <img src="assets/photos/eleccion-formato.png" alt="Botella de vino Josep Grau y aceite Soul Meraki sobre tabla de madera" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          <img src="./vino-aceite-vela-mv9xkxe5-k3hy.png" alt="Botella de vino Josep Grau y aceite Soul Meraki sobre tabla de madera" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
         </div>
       </li>
       <li style="display:flex;flex-wrap:wrap;flex-direction:row-reverse">
@@ -196,10 +196,10 @@
             <span style="display:block;font-style:italic;font-size:20px;line-height:1.3;color:var(--accent)">02</span>
             <span style="display:block;margin-top:8px;font-size:clamp(26px,2.4vw,34px);line-height:1.2;letter-spacing:-0.01em;text-wrap:balance">Personalización integral</span>
           </h3>
-          <p style="margin:0;max-width:440px;align-self:flex-start;text-align:left;font-size:16px;line-height:1.6;color:var(--text-secondary);text-wrap:pretty">Diseño de carpeta corporativa, dedicatoria a medida y landing digital exclusiva para la persona u ocasión.</p>
+          <p style="margin:0;max-width:440px;align-self:flex-start;text-align:left;font-size:16px;line-height:1.6;color:var(--text-secondary);text-wrap:pretty">Diseño de carpeta corporativa, dedicatoria a medida y espacio digital exclusivo para la persona u ocasión.</p>
         </div>
         <div style="flex:1 1 420px;position:relative;aspect-ratio:3 / 2">
-          <img src="assets/photos/personalizacion-integral.png" alt="Manos sosteniendo la carpeta de dedicatoria personalizada atada con cordón de piel" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block">
+          <img src="./dedicatoria-coaching-equilibrium-mv9xvr8d-3o8y.png" alt="Manos sosteniendo la carpeta de dedicatoria personalizada atada con cordón de piel" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block">
         </div>
       </li>
       <li style="display:flex;flex-wrap:wrap;flex-direction:row">
@@ -211,7 +211,7 @@
           <p style="margin:0;max-width:440px;align-self:flex-end;text-align:right;font-size:16px;line-height:1.6;color:var(--text-secondary);text-wrap:pretty">Nos ocupamos de que cada detalle esté listo y llegue en el instante exacto.</p>
         </div>
         <div style="flex:1 1 420px;position:relative;aspect-ratio:3 / 2">
-          <img src="./soul-meraki-caja-mv8m0q4s-1dv0.png" alt="Caja Soul Meraki abierta con carpeta, vela, botella envuelta y pergamino" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          <img src="./soul-meraki-caja-alkimia-mv9y7ppx-1jrl.png" alt="Caja Soul Meraki abierta con carpeta, vela, botella envuelta y pergamino" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
         </div>
       </li>
     </ol>
@@ -228,7 +228,7 @@
           <img src="assets/logos/alkimia-capital.png" alt="Alkimia Capital family office" style="display:block;max-width:100%;height:64px;width:auto;object-fit:contain">
         </div>
         <div style="aspect-ratio:5 / 2;display:flex;align-items:center;justify-content:center;padding:24px">
-          <img src="assets/logos/altitude-leadership.png" alt="Altitude Leadership Partners" style="display:block;max-width:100%;height:108px;width:auto;object-fit:contain">
+          <img src="./executive-mv9yahwc-4925.png" alt="Altitude Leadership Partners" style="display:block;max-width:100%;height:108px;width:auto;object-fit:contain">
         </div>
         <div style="aspect-ratio:5 / 2;display:flex;align-items:center;justify-content:center;padding:24px">
           <img src="assets/logos/opcio-group.png" alt="Opció Group" style="display:block;max-width:100%;height:72px;width:auto;object-fit:contain">
@@ -276,9 +276,15 @@
 class Component extends DCLogic {
   difRef = React.createRef();
   heroVideo = null;
-  setHeroVideo = (v) => {
-    if (!v || v === this.heroVideo) return;
-    this.heroVideo = v;
+  bgVideos = new Set();
+  setBgVideo = (v) => {
+    if (!v || this.bgVideos.has(v)) return;
+    this.bgVideos.add(v);
+    this.setHeroVideo(v, true);
+  };
+  setHeroVideo = (v, bg) => {
+    if (!v || (!bg && v === this.heroVideo)) return;
+    if (!bg) this.heroVideo = v;
     v.muted = true; v.defaultMuted = true; v.loop = true; v.playsInline = true;
     v.setAttribute('muted', ''); v.setAttribute('playsinline', '');
     const tryPlay = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
@@ -286,6 +292,7 @@ class Component extends DCLogic {
     v.addEventListener('canplay', tryPlay, { once: true });
     const onInteract = () => { tryPlay(); window.removeEventListener('pointerdown', onInteract); };
     window.addEventListener('pointerdown', onInteract);
+    if ('IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting && v.paused) tryPlay(); }), { threshold: 0.05 }).observe(v);
   };
   componentDidMount() {
     this.smoothOn = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -390,6 +397,7 @@ class Component extends DCLogic {
     const s = this.props.sentiment ?? 'verd';
     return {
       setHeroVideo: this.setHeroVideo,
+      setBgVideo: this.setBgVideo,
       sentiment: s,
       impactSentiment: (this.props.impactTone ?? 'sentimiento') === 'tinta' ? 'condol' : s,
       fill: { ratio: 'auto', style: { position: 'absolute', inset: 0, height: '100%' } },
@@ -405,9 +413,9 @@ class Component extends DCLogic {
       menuOpen: !!this.state?.menuOpen,
       openMenu: () => this.setState({ menuOpen: true }),
       closeMenu: () => this.setState({ menuOpen: false }),
-      headerCta: { style: { whiteSpace: 'normal', textAlign: 'center', lineHeight: 1.3 } },
+      headerCta: { style: { whiteSpace: 'normal', textAlign: 'center', lineHeight: 1.3, minHeight: '44px', padding: 'clamp(6px,1.5vw,10px) clamp(10px,2.5vw,20px)', fontSize: 'clamp(10px,2.6vw,13px)', letterSpacing: 'clamp(0.08em,0.6vw,0.15em)', maxWidth: '100%' } },
       goContacto: () => this.goTo('contacto'),
-      menuItems: [['propuesta','Propuesta de valor'],['diferencial','Diferencial'],['impacto','Impacto'],['casos','Casos de uso'],['proceso','Proceso'],['clientes','Clientes'],['contacto','Contacto']].map(([id,label],i) => ({ id, label, num: String(i+1).padStart(2,'0'), go: e => { e.preventDefault(); this.setState({ menuOpen: false }); this.goTo(id); } })),
+      menuItems: [['propuesta','Propuesta de valor'],['impacto','Impacto'],['diferencial','Diferencial'],['casos','Casos de uso'],['proceso','Proceso'],['clientes','Clientes'],['contacto','Contacto']].map(([id,label],i) => ({ id, label, num: String(i+1).padStart(2,'0'), go: e => { e.preventDefault(); this.setState({ menuOpen: false }); this.goTo(id); } })),
       goDiferencial: () => {
         const el = this.difRef.current;
         if (el) this.scrollToY(el.getBoundingClientRect().top + window.scrollY);
