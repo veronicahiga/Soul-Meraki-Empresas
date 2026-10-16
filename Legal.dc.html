@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Soul Meraki · Legal</title>
+  <link rel="stylesheet" href="_ds/soul-meraki-design-system-7dffe249-7f21-4540-82af-87386c11b050/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/soul-meraki-design-system-7dffe249-7f21-4540-82af-87386c11b050/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/soul-meraki-design-system-7dffe249-7f21-4540-82af-87386c11b050/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/soul-meraki-design-system-7dffe249-7f21-4540-82af-87386c11b050/tokens/layout.css">
+  <link rel="stylesheet" href="_ds/soul-meraki-design-system-7dffe249-7f21-4540-82af-87386c11b050/tokens/base.css">
+  <link rel="stylesheet" href="_ds/soul-meraki-design-system-7dffe249-7f21-4540-82af-87386c11b050/styles.css">
+  <script src="_ds/soul-meraki-design-system-7dffe249-7f21-4540-82af-87386c11b050/_ds_bundle.js"></script>
+  <style>body{margin:0}a{color:var(--sm-ink)}a:hover{color:var(--accent)}</style>
+</helmet>
+<div data-sentiment="verd" style="min-height:100vh;display:flex;flex-direction:column;background:var(--surface-page);color:var(--text-body);font-family:var(--font-serif)">
+
+  <header data-screen-label="Cabecera" style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:16px;padding:24px clamp(16px,4vw,48px);border-bottom:1px solid var(--border-hairline)">
+    <a href="Landing%20Empresa.dc.html?lang={{ lang }}" style="grid-column:1;grid-row:1;justify-self:start;min-height:44px;display:flex;align-items:center;font-family:var(--font-sans);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);text-decoration:none;transition:color 400ms ease" style-hover="color:var(--sm-ink)">{{ t.back }}</a>
+    <a href="Landing%20Empresa.dc.html?lang={{ lang }}" aria-label="{{ t.home }}" style="grid-column:2;justify-self:center;display:flex;color:var(--sm-ink)"><img src="assets/logo-soulmeraki-tinta.svg" alt="Soul Meraki" style="display:block;height:clamp(40px,8vw,56px);width:auto"></a>
+    <div style="grid-column:3;grid-row:1;justify-self:end">
+      <div ref="{{ setLangRef }}" style="position:relative;flex-shrink:0">
+        <button type="button" onClick="{{ toggleLang }}" aria-haspopup="true" aria-expanded="{{ langOpen }}" aria-label="Idioma: {{ langCode }}" style="display:flex;align-items:center;gap:8px;min-height:44px;min-width:44px;padding:0 4px;background:none;border:0;border-radius:0;cursor:pointer;color:var(--sm-ink);font-family:var(--font-sans);font-weight:400;font-size:13px;letter-spacing:0.1em" style-focus="outline:1px solid var(--sm-ink);outline-offset:3px">
+          <span>{{ langCode }}</span>
+          <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true" style="display:block;transform:{{ chevRot }};transition:transform 400ms ease"><path d="M0.5 0.5 L5 5 L9.5 0.5" fill="none" stroke="currentColor" stroke-width="1"></path></svg>
+        </button>
+        <sc-if value="{{ langOpen }}" hint-placeholder-val="{{ false }}">
+          <ul role="menu" style="position:absolute;top:100%;right:0;z-index:20;min-width:72px;margin:4px 0 0;padding:4px 0;list-style:none;background:var(--sm-ink);border:1px solid rgba(255,255,255,0.15)">
+            <li role="none"><button type="button" role="menuitemradio" lang="ca" aria-checked="{{ onCA }}" onClick="{{ setCA }}" style="display:flex;align-items:center;width:100%;min-height:44px;padding:0 16px;border:0;border-radius:0;cursor:pointer;background:transparent;color:var(--sm-white);font-family:var(--font-sans);font-weight:{{ fwCA }};font-size:13px;letter-spacing:0.15em;text-align:left;transition:opacity 400ms ease" style-hover="opacity:0.7" style-focus="outline:1px solid var(--sm-white);outline-offset:-4px">CA</button></li>
+            <li role="none"><button type="button" role="menuitemradio" lang="es" aria-checked="{{ onES }}" onClick="{{ setES }}" style="display:flex;align-items:center;width:100%;min-height:44px;padding:0 16px;border:0;border-radius:0;cursor:pointer;background:transparent;color:var(--sm-white);font-family:var(--font-sans);font-weight:{{ fwES }};font-size:13px;letter-spacing:0.15em;text-align:left;transition:opacity 400ms ease" style-hover="opacity:0.7" style-focus="outline:1px solid var(--sm-white);outline-offset:-4px">ES</button></li>
+          </ul>
+        </sc-if>
+      </div>
+    </div>
+  </header>
+
+  <main style="flex:1;padding:clamp(64px,8vw,128px) clamp(24px,4vw,32px)">
+    <article style="max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+
+      <sc-if value="{{ avisoCa }}" hint-placeholder-val="{{ true }}">
+        <section data-screen-label="Avís legal" lang="ca" style="display:flex;flex-direction:column;gap:32px">
+          <h1 style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(36px,5vw,56px);line-height:1.15;letter-spacing:-0.01em">Avís legal</h1>
+          <p style="margin:0;font-size:18px;line-height:1.6;text-wrap:pretty">En compliment de l'article 10 de la Llei 34/2002, d'11 de juliol, de Serveis de la Societat de la Informació i Comerç Electrònic (LSSICE), a continuació s'exposen les dades identificatives del titular del lloc web:</p>
+          <ul style="margin:0;padding:0 0 0 20px;display:flex;flex-direction:column;gap:8px;font-size:18px;line-height:1.6">
+            <li><span style="font-weight:600">Titular:</span> Sílvia Domènech Abad</li>
+            <li><span style="font-weight:600">NIF/DNI:</span> 46133100E</li>
+            <li><span style="font-weight:600">Domicili:</span> Plaça Bonanova, 4, En 1, Barcelona</li>
+            <li><span style="font-weight:600">Correu electrònic:</span> <a href="mailto:care@soulmeraki.com">care@soulmeraki.com</a></li>
+          </ul>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <h2 style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(24px,2.6vw,30px);line-height:1.2">Condicions d’ús</h2>
+            <p style="margin:0;font-size:18px;line-height:1.6;text-wrap:pretty">L'accés i ús d'aquest lloc web atribueix la condició d'Usuari, acceptant des d'aquest mateix moment, plenament i sense reserves, les presents condicions generals. L'Usuari es compromet a utilitzar el lloc web, els seus serveis i continguts sense contravenir la legislació vigent, la bona fe i l'ordre públic.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <h2 style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(24px,2.6vw,30px);line-height:1.2">Propietat intel·lectual</h2>
+            <p style="margin:0;font-size:18px;line-height:1.6;text-wrap:pretty">Tots els continguts d'aquest lloc web (textos, imatges, disseny, logotips, codi font, etc.) són propietat exclusiva de Soul Meraki o de tercers que n'han autoritzat el seu ús, i estan protegits per la legislació de propietat intel·lectual i industrial. Queda prohibida la seva reproducció, distribució o modificació sense autorització expressa.</p>
+          </div>
+        </section>
+      </sc-if>
+
+      <sc-if value="{{ avisoEs }}" hint-placeholder-val="{{ false }}">
+        <section data-screen-label="Aviso legal" lang="es" style="display:flex;flex-direction:column;gap:32px">
+          <h1 style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(36px,5vw,56px);line-height:1.15;letter-spacing:-0.01em">Aviso legal</h1>
+          <p style="margin:0;font-size:18px;line-height:1.6;text-wrap:pretty">En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSICE), a continuación se exponen los datos identificativos del titular del sitio web:</p>
+          <ul style="margin:0;padding:0 0 0 20px;display:flex;flex-direction:column;gap:8px;font-size:18px;line-height:1.6">
+            <li><span style="font-weight:600">Titular:</span> Sílvia Domènech Abad</li>
+            <li><span style="font-weight:600">NIF/DNI:</span> 46133100E</li>
+            <li><span style="font-weight:600">Domicilio:</span> Plaça Bonanova, 4, En 1, Barcelona</li>
+            <li><span style="font-weight:600">Correo electrónico:</span> <a href="mailto:care@soulmeraki.com">care@soulmeraki.com</a></li>
+          </ul>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <h2 style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(24px,2.6vw,30px);line-height:1.2">Condiciones de uso</h2>
+            <p style="margin:0;font-size:18px;line-height:1.6;text-wrap:pretty">El acceso y uso de este sitio web atribuye la condición de Usuario, quien acepta desde ese mismo momento, de forma plena y sin reservas, las presentes condiciones generales. El Usuario se compromete a utilizar el sitio web, sus servicios y contenidos sin contravenir la legislación vigente, la buena fe y el orden público.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <h2 style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(24px,2.6vw,30px);line-height:1.2">Propiedad intelectual</h2>
+            <p style="margin:0;font-size:18px;line-height:1.6;text-wrap:pretty">Todos los contenidos de este sitio web (textos, imágenes, diseño, logotipos, código fuente, etc.) son propiedad exclusiva de Soul Meraki o de terceros que han autorizado su uso, y están protegidos por la legislación sobre propiedad intelectual e industrial. Queda prohibida su reproducción, distribución o modificación sin autorización expresa.</p>
+          </div>
+        </section>
+      </sc-if>
+
+      <sc-if value="{{ privCa }}" hint-placeholder-val="{{ false }}">
+        <section data-screen-label="Política de privacitat" lang="ca" style="display:flex;flex-direction:column;gap:32px">
+          <h1 style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(36px,5vw,56px);line-height:1.15;letter-spacing:-0.01em">Política de privacitat</h1>
+          <p style="margin:0;font-size:18px;line-height:1.6;text-wrap:pretty">D’acord amb el Reglament (UE) 2016/679 (RGPD) i la Llei Orgànica 3/2018 (LOPDGDD), s’informa a l’usuari de la següent política de tractament de dades:</p>
+          <ul style="margin:0;padding:0 0 0 20px;display:flex;flex-direction:column;gap:16px;font-size:18px;line-height:1.6;text-wrap:pretty">
+            <li><span style="font-weight:600">Responsable del tractament:</span> Sílvia Domènech Abad (DNI 46133100E).</li>
+            <li><span style="font-weight: 600;">Finalitat:</span>&nbsp;Gestionar les consultes realitzades a través del web, enviar informació sol·licitada i, si escau, mantenir la relació contractual.</li>
+            <li><span style="font-weight: 600;">Legitimació:</span>&nbsp;El consentiment de l'interessat en marcar la casella d'acceptació i enviar el formulari.</li>
+            <li><span style="font-weight: 600;">Destinataris:</span>&nbsp;No es cediran dades a tercers, excepte per obligació legal.</li>
+            <li><span style="font-weight: 600;">Drets:</span> Tens dret a accedir, rectificar i suprimir les teves dades, així com altres drets detallats a la normativa, enviant un correu a <a href="mailto:care@soulmeraki.com">care@soulmeraki.com</a> o per correu postal a Plaça Bonanova, 4, En 1.</li>
+            <li><span style="font-weight: 600;">Termini de conservació:</span> Les dades es conservaran mentre es mantingui la relació comercial o durant els anys necessaris per complir amb les obligacions legals.</li>
+          </ul>
+        </section>
+      </sc-if>
+
+      <sc-if value="{{ privEs }}" hint-placeholder-val="{{ false }}">
+        <section data-screen-label="Política de privacidad" lang="es" style="display:flex;flex-direction:column;gap:32px">
+          <h1 style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(36px,5vw,56px);line-height:1.15;letter-spacing:-0.01em">Política de privacidad</h1>
+          <p style="margin:0;font-size:18px;line-height:1.6;text-wrap:pretty">De acuerdo con el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), se informa al usuario de la siguiente política de tratamiento de datos:</p>
+          <ul style="margin:0;padding:0 0 0 20px;display:flex;flex-direction:column;gap:16px;font-size:18px;line-height:1.6;text-wrap:pretty">
+            <li><span style="font-weight:600">Responsable del tratamiento:</span> Sílvia Domènech Abad (DNI 46133100E).</li>
+            <li><span style="font-weight:600">Finalidad:</span> Gestionar las consultas realizadas a través de la web, enviar la información solicitada y, en su caso, mantener la relación contractual.</li>
+            <li><span style="font-weight:600">Legitimación:</span> El consentimiento del interesado al marcar la casilla de aceptación y enviar el formulario.</li>
+            <li><span style="font-weight:600">Destinatarios:</span> No se cederán datos a terceros, salvo por obligación legal.</li>
+            <li><span style="font-weight:600">Derechos:</span> Tienes derecho a acceder, rectificar y suprimir tus datos, así como a ejercer los demás derechos contemplados en la normativa, enviando un correo electrónico a <a href="mailto:care@soulmeraki.com">care@soulmeraki.com</a> o por correo postal a Plaça Bonanova, 4, En 1, Barcelona.</li>
+            <li><span style="font-weight:600">Plazo de conservación:</span> Los datos se conservarán mientras se mantenga la relación comercial o durante los años necesarios para cumplir con las obligaciones legales.</li>
+          </ul>
+        </section>
+      </sc-if>
+
+      <sc-if value="{{ cookCa }}" hint-placeholder-val="{{ false }}">
+        <section data-screen-label="Política de galetes" lang="ca" style="display:flex;flex-direction:column;gap:32px">
+          <h1 style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(36px,5vw,56px);line-height:1.15;letter-spacing:-0.01em"><div>Política de Cookies</div></h1>
+          <p style="margin:0;font-size:18px;line-height:1.6;text-wrap:pretty">Aquest lloc web utilitza cookies per millorar l'experiència de l'usuari. Una cookie és un petit fitxer de text que s'emmagatzema al seu navegador.</p>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <h2 style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(24px,2.6vw,30px);line-height:1.2"><div>Tipus de cookies que utilitzem:</div></h2>
+            <ul style="margin:0;padding:0 0 0 20px;display:flex;flex-direction:column;gap:16px;font-size:18px;line-height:1.6;text-wrap:pretty">
+              <li><span style="font-weight: 600;">Cookies Tècniques:</span>&nbsp;Necessàries per al funcionament bàsic de la web (no es poden desactivar).</li>
+              <li><span style="font-weight: 600;">Cookies d'Analítica:</span> (Per exemple, Google Analytics) Ens permeten saber quantes visites tenim i com es mouen els usuaris per la web. Només s'activaran si dónes el teu consentiment.</li>
+              <li><span style="font-weight: 600;">Cookies de Personalització:</span>&nbsp;Permeten recordar preferències com l'idioma.</li>
+            </ul>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <h2 style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(24px,2.6vw,30px);line-height:1.2">Com gestionar les galetes</h2>
+            <p style="margin:0;font-size:18px;line-height:1.6;text-wrap:pretty">L'usuari pot configurar el seu navegador per bloquejar o eliminar les cookies instal·lades al seu equip mitjançant les opcions del navegador. Tingueu en compte que la desactivació d'algunes cookies pot afectar el correcte funcionament d'algunes seccions d'aquesta pàgina web.</p>
+          </div>
+        </section>
+      </sc-if>
+
+      <sc-if value="{{ cookEs }}" hint-placeholder-val="{{ false }}">
+        <section data-screen-label="Política de cookies" lang="es" style="display:flex;flex-direction:column;gap:32px">
+          <h1 style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(36px,5vw,56px);line-height:1.15;letter-spacing:-0.01em">Política de cookies</h1>
+          <p style="margin:0;font-size:18px;line-height:1.6;text-wrap:pretty">Este sitio web utiliza cookies para mejorar la experiencia del usuario. Una cookie es un pequeño archivo de texto que se almacena en su navegador.</p>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <h2 style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(24px,2.6vw,30px);line-height:1.2">Tipos de cookies que utilizamos</h2>
+            <ul style="margin:0;padding:0 0 0 20px;display:flex;flex-direction:column;gap:16px;font-size:18px;line-height:1.6;text-wrap:pretty">
+              <li><span style="font-weight:600">Cookies técnicas:</span> necesarias para el funcionamiento básico de la web (no se pueden desactivar).</li>
+              <li><span style="font-weight:600">Cookies de analítica:</span> (por ejemplo, Google Analytics) nos permiten conocer el número de visitas que recibe la web y cómo navegan los usuarios por ella. Solo se activarán si das tu consentimiento.</li>
+              <li><span style="font-weight:600">Cookies de personalización:</span> permiten recordar preferencias, como el idioma.</li>
+            </ul>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <h2 style="margin:0;font-family:var(--font-serif);font-weight:300;font-size:clamp(24px,2.6vw,30px);line-height:1.2">Cómo gestionar las cookies</h2>
+            <p style="margin:0;font-size:18px;line-height:1.6;text-wrap:pretty">El usuario puede configurar su navegador para bloquear o eliminar las cookies instaladas en su dispositivo mediante las opciones del propio navegador. Ten en cuenta que la desactivación de algunas cookies puede afectar al correcto funcionamiento de determinadas secciones de este sitio web.</p>
+          </div>
+        </section>
+      </sc-if>
+
+    </article>
+  </main>
+
+  <footer data-screen-label="Pie" style="background:var(--sm-white);padding:clamp(40px,5vw,48px) clamp(24px,4vw,48px)">
+    <div style="display:grid;grid-template-columns:{{ fCols }};align-items:center;gap:24px 32px">
+      <p style="margin:0;justify-self:{{ fSideL }};text-align:{{ fTextL }};order:{{ fOrdCopy }};font-family:var(--font-sans);font-weight:300;font-size:14px;line-height:1.5;color:var(--text-secondary)">© 2026 Soul Meraki.</p>
+      <a href="Landing%20Empresa.dc.html?lang={{ lang }}" aria-label="{{ t.home }}" style="justify-self:center;order:{{ fOrdLogo }};display:flex;color:var(--sm-ink)"><x-import component-from-global-scope="SoulMerakiDesignSystem_7dffe2.Logo" variant="symbol" height="{{ 40 }}" hint-size="24px,40px"></x-import></a>
+      <nav aria-label="Legal" style="justify-self:{{ fSideR }};order:{{ fOrdNav }};display:flex;flex-wrap:wrap;justify-content:{{ fAlignR }};column-gap:24px;font-family:var(--font-sans);font-size:14px;line-height:1.4">
+        <a href="#aviso-legal" style="color:{{ avisoColor }};text-decoration:none;min-height:44px;display:flex;align-items:center;transition:color 400ms ease" style-hover="color:var(--sm-ink)">{{ t.legal }}</a>
+        <a href="#privacidad" style="color:{{ privColor }};text-decoration:none;min-height:44px;display:flex;align-items:center;transition:color 400ms ease" style-hover="color:var(--sm-ink)">{{ t.priv }}</a>
+        <a href="#cookies" style="color:{{ cookColor }};text-decoration:none;min-height:44px;display:flex;align-items:center;transition:color 400ms ease" style-hover="color:var(--sm-ink)">{{ t.cook }}</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  T = {
+    ca: { back: '← Tornar', home: 'Soul Meraki · Inici', legal: 'Avís legal', priv: 'Política de privacitat', cook: 'Política de galetes' },
+    es: { back: '← Volver', home: 'Soul Meraki · Inicio', legal: 'Aviso legal', priv: 'Política de privacidad', cook: 'Política de cookies' },
+  };
+  state = { page: 'aviso-legal', lang: (() => { const l = new URLSearchParams(window.location.search).get('lang'); return l === 'es' ? 'es' : 'ca'; })() };
+  read = () => {
+    const h = (window.location.hash || '').slice(1);
+    const page = ['aviso-legal', 'privacidad', 'cookies'].includes(h) ? h : 'aviso-legal';
+    this.setState({ page });
+    window.scrollTo(0, 0);
+  };
+  syncLang() {
+    const l = this.state.lang;
+    document.documentElement.lang = l;
+    const key = { 'aviso-legal': 'legal', privacidad: 'priv', cookies: 'cook' }[this.state.page];
+    document.title = 'Soul Meraki · ' + this.T[l][key];
+    const u = new URL(window.location.href);
+    if (u.searchParams.get('lang') !== l) { u.searchParams.set('lang', l); history.replaceState(null, '', u); }
+  }
+  componentDidMount() {
+    this.read(); window.addEventListener('hashchange', this.read);
+    this.onNarrow = () => { const n = window.innerWidth < 720; if (n !== !!this.state?.narrow) this.setState({ narrow: n }); };
+    this.onNarrow(); window.addEventListener('resize', this.onNarrow);
+    this.onDocDown = e => { if (this.state.langOpen && this.langEl && !this.langEl.contains(e.target)) this.setState({ langOpen: false }); };
+    this.onEsc = e => { if (e.key === 'Escape' && this.state.langOpen) this.setState({ langOpen: false }); };
+    document.addEventListener('pointerdown', this.onDocDown);
+    document.addEventListener('keydown', this.onEsc);
+    this.syncLang();
+  }
+  componentDidUpdate() { this.syncLang(); }
+  componentWillUnmount() {
+    window.removeEventListener('hashchange', this.read); window.removeEventListener('resize', this.onNarrow);
+    document.removeEventListener('pointerdown', this.onDocDown); document.removeEventListener('keydown', this.onEsc);
+  }
+  renderVals() {
+    const p = this.state.page;
+    const lang = this.state.lang;
+    const ca = lang === 'ca';
+    const c = k => (p === k ? 'var(--sm-ink)' : 'var(--text-secondary)');
+    const sw = code => ({ ['set' + code]: () => this.setState({ lang: code.toLowerCase(), langOpen: false }), ['on' + code]: lang === code.toLowerCase(), ['fw' + code]: lang === code.toLowerCase() ? 500 : 300 });
+    return {
+      t: this.T[lang], lang, ...sw('ES'), ...sw('CA'),
+      langCode: lang.toUpperCase(),
+      langOpen: !!this.state.langOpen,
+      chevRot: this.state.langOpen ? 'rotate(180deg)' : 'none',
+      toggleLang: () => this.setState(st => ({ langOpen: !st.langOpen })),
+      setLangRef: el => { this.langEl = el; },
+      avisoCa: p === 'aviso-legal' && ca, avisoEs: p === 'aviso-legal' && !ca,
+      privCa: p === 'privacidad' && ca, privEs: p === 'privacidad' && !ca,
+      cookCa: p === 'cookies' && ca, cookEs: p === 'cookies' && !ca,
+      avisoColor: c('aviso-legal'),
+      privColor: c('privacidad'),
+      cookColor: c('cookies'),
+      fCols: this.state?.narrow ? 'minmax(0,1fr)' : 'minmax(0,1fr) auto minmax(0,1fr)',
+      fSideL: this.state?.narrow ? 'center' : 'start',
+      fSideR: this.state?.narrow ? 'center' : 'end',
+      fTextL: this.state?.narrow ? 'center' : 'left',
+      fAlignR: this.state?.narrow ? 'center' : 'flex-end',
+      fOrdLogo: this.state?.narrow ? 0 : 1,
+      fOrdNav: this.state?.narrow ? 1 : 2,
+      fOrdCopy: this.state?.narrow ? 2 : 0,
+    };
+  }
+}
+</script>
+</body>
+</html>
